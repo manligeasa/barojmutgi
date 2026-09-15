@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1d4ed8;
+  --color-primary-dark: #1e3a8a;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f8fafc;
+  --color-text: #0f172a;
+  --color-danger: #b91c1c;
+}
+
+html {
+  /* 시니어 친화 기본 글자 크기: 1rem = 18px */
+  font-size: 112.5%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-surface-muted);
+  color: var(--color-text);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#root {
+  min-height: 100dvh;
+}

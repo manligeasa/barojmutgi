@@ -1,0 +1,50 @@
+[
+  {
+    "id": "writing-sns",
+    "title": "글쓰기와 SNS",
+    "icon": "✍️",
+    "description": "블로그, SNS 글, 제목을 쉽게 써요"
+  },
+  {
+    "id": "work-report",
+    "title": "업무와 보고서",
+    "icon": "📊",
+    "description": "회의록, 보고서, 제안서를 정리해요"
+  },
+  {
+    "id": "relationship",
+    "title": "인간관계와 메시지",
+    "icon": "💌",
+    "description": "감사, 축하, 안내 메시지를 보내요"
+  },
+  {
+    "id": "learning-ai-terms",
+    "title": "학습과 AI 용어",
+    "icon": "📚",
+    "description": "AI 용어와 공부 자료를 쉽게 만들어요"
+  },
+  {
+    "id": "health-life-log",
+    "title": "건강·운동·생활 기록",
+    "icon": "🩺",
+    "description": "증상 정리와 운동 계획을 세워요"
+  },
+  {
+    "id": "travel-event",
+    "title": "여행과 행사",
+    "icon": "✈️",
+    "description": "여행 일정과 행사 준비를 도와줘요"
+  },
+  {
+    "id": "image-generation",
+    "title": "이미지 생성·편집",
+    "icon": "🖼️",
+    "description": "사진을 원하는 스타일로 바꿔요"
+  },
+  {
+    "id": "my-prompt",
+    "title": "나만의 프롬프트",
+    "icon": "🛠️",
+    "description": "나만의 질문을 직접 쓰고 다듬어요"
+  }
+]

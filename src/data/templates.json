@@ -1,0 +1,1084 @@
+[
+  {
+    "id": "writing-blog-post",
+    "category": "writing-sns",
+    "title": "블로그 글 초안",
+    "searchKeywords": ["블로그", "글쓰기", "포스트"],
+    "description": "블로그에 올릴 글의 주제와 분위기를 정하면 초안을 만들어 드립니다.",
+    "fields": [
+      { "key": "topic", "label": "무엇에 대해 쓰고 싶으세요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 가을 등산 후기" },
+      { "key": "keyPoints", "label": "꼭 들어가야 할 내용이 있나요?", "type": "text", "required": true, "step": 2, "placeholder": "예: 등산 코스, 준비물, 소감" },
+      { "key": "audience", "label": "누가 읽으면 좋을까요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "general", "label": "일반 독자" },
+          { "value": "hobby", "label": "같은 취미를 가진 사람들" },
+          { "value": "family", "label": "가족과 친구" }
+        ] },
+      { "key": "tone", "label": "어떤 말투로 쓸까요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "friendly", "label": "편안하고 친근하게" },
+          { "value": "formal", "label": "정중하고 차분하게" },
+          { "value": "playful", "label": "재미있고 발랄하게" }
+        ] },
+      { "key": "length", "label": "길이는 어느 정도가 좋을까요?", "type": "choice", "required": false, "step": 4,
+        "options": [
+          { "value": "short", "label": "짧게 (500자 이내)" },
+          { "value": "medium", "label": "보통 (800자 내외)" },
+          { "value": "long", "label": "길게 (900자 내외)" },
+          { "value": "longer", "label": "더 길게 (1200자 내외)" }
+        ] }
+    ],
+    "promptPattern": "너는 친절한 블로그 작가다. 다음 정보를 참고해 블로그 글을 작성하라. 주제: {topic}. 꼭 포함할 내용: {keyPoints}. 읽는 사람: {audience}. 말투: {tone}. 길이: {length}. 자연스러운 소제목을 붙이고 읽기 쉽게 문단을 나눠라.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "work-meeting-minutes",
+    "category": "work-report",
+    "title": "회의록 정리",
+    "searchKeywords": ["회의록", "회의", "정리"],
+    "description": "회의 내용을 입력하면 보기 좋은 회의록으로 정리하는 질문을 만듭니다.",
+    "fields": [
+      { "key": "meetingTopic", "label": "무슨 회의였나요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 3월 정기 이사회" },
+      { "key": "mainPoints", "label": "어떤 이야기가 오갔나요?", "type": "text", "required": true, "step": 2, "placeholder": "예: 예산안 논의, 신규 회원 모집 계획" },
+      { "key": "audience", "label": "누가 이 회의록을 보나요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "internal", "label": "팀 내부 공유용" },
+          { "value": "manager", "label": "상급자 보고용" },
+          { "value": "external", "label": "외부 공유용" }
+        ] },
+      { "key": "tone", "label": "어떤 말투로 정리할까요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "concise", "label": "간결하고 사실 중심으로" },
+          { "value": "formal", "label": "정중하고 격식 있게" }
+        ] },
+      { "key": "format", "label": "어떤 형식이 좋을까요?", "type": "choice", "required": false, "step": 4,
+        "options": [
+          { "value": "table", "label": "표 형식" },
+          { "value": "bullets", "label": "글머리 기호 목록" },
+          { "value": "prose", "label": "줄글 요약" }
+        ] }
+    ],
+    "promptPattern": "너는 정확한 회의록 작성자다. 다음 정보를 바탕으로 회의록을 정리하라. 회의 주제: {meetingTopic}. 주요 내용: {mainPoints}. 보는 대상: {audience}. 말투: {tone}. 형식: {format}. 결정 사항과 다음 할 일을 구분해서 정리하라.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "relationship-event-notice",
+    "category": "relationship",
+    "title": "행사 참석 안내문",
+    "searchKeywords": ["행사", "모임", "공지", "참석"],
+    "description": "회원이나 지인에게 모임을 알리고 참석 여부를 묻습니다.",
+    "fields": [
+      { "key": "event", "label": "어떤 행사인가요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 클럽대항전 발대식" },
+      { "key": "datePlace", "label": "언제, 어디에서 하나요?", "type": "text", "required": true, "step": 2, "placeholder": "예: 금요일 오후 6시, 경희횟집" },
+      { "key": "audience", "label": "누구에게 보내나요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "members", "label": "단체 회원" },
+          { "value": "friends", "label": "가까운 지인" },
+          { "value": "coworkers", "label": "직장 동료" }
+        ] },
+      { "key": "tone", "label": "어떤 느낌으로 쓸까요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "warm", "label": "따뜻하고 예의 있게" },
+          { "value": "clear", "label": "간결하고 명확하게" },
+          { "value": "cheerful", "label": "밝고 신나게" }
+        ] },
+      { "key": "length", "label": "길이는 어느 정도가 좋을까요?", "type": "choice", "required": false, "step": 4,
+        "options": [
+          { "value": "short", "label": "짧게 (150자 이내)" },
+          { "value": "medium", "label": "보통 (300자 내외)" },
+          { "value": "long", "label": "자세하게" }
+        ] }
+    ],
+    "promptPattern": "너는 친절한 행사 안내문 작성자다. 다음 정보를 바탕으로 {audience}에게 보낼 안내문을 작성하라. 행사: {event}. 일시와 장소: {datePlace}. 말투: {tone}. 길이: {length}. 핵심 정보를 빠뜨리지 말고 참석 여부를 자연스럽게 물어라.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "learning-easy-explanation",
+    "category": "learning-ai-terms",
+    "title": "어려운 개념 쉽게 설명받기",
+    "searchKeywords": ["설명", "공부", "용어", "쉽게"],
+    "description": "어려운 용어나 개념을 쉬운 말로 설명해 달라고 요청하는 질문을 만듭니다.",
+    "fields": [
+      { "key": "topic", "label": "무엇을 알고 싶으세요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 생성형 AI가 뭔지" },
+      { "key": "background", "label": "이미 알고 있는 내용이 있나요?", "type": "text", "required": false, "step": 2, "placeholder": "예: 스마트폰은 쓸 줄 알아요" },
+      { "key": "audienceLevel", "label": "설명 수준은 어느 정도가 좋을까요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "beginner", "label": "처음 듣는 사람도 이해하게" },
+          { "value": "some", "label": "어느 정도 아는 사람 수준으로" }
+        ] },
+      { "key": "tone", "label": "어떤 말투가 좋을까요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "teacher", "label": "친근한 선생님처럼" },
+          { "value": "calm", "label": "또박또박 차분하게" }
+        ] },
+      { "key": "format", "label": "어떤 형식이 좋을까요?", "type": "choice", "required": false, "step": 4,
+        "options": [
+          { "value": "analogy", "label": "비유를 들어 설명" },
+          { "value": "steps", "label": "순서대로 단계별 설명" }
+        ] }
+    ],
+    "promptPattern": "너는 어려운 개념을 쉽게 설명하는 선생님이다. 다음 정보를 참고해 설명하라. 알고 싶은 것: {topic}. 이미 아는 것: {background}. 설명 수준: {audienceLevel}. 말투: {tone}. 설명 방식: {format}. 전문 용어를 쓸 때는 일상적인 비유를 함께 들어라.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "health-symptom-summary",
+    "category": "health-life-log",
+    "title": "병원 방문 전 증상 정리",
+    "searchKeywords": ["증상", "병원", "건강", "진료"],
+    "description": "병원에 가기 전 의사에게 전달할 증상을 정리하는 질문을 만듭니다. 진단이나 처방을 대신하지 않습니다.",
+    "fields": [
+      { "key": "symptom", "label": "어떤 증상이 있나요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 이틀 전부터 오른쪽 무릎이 아파요" },
+      { "key": "duration", "label": "언제부터, 얼마나 자주 그런가요?", "type": "text", "required": true, "step": 2, "placeholder": "예: 3일 전부터 계단을 오를 때마다" },
+      { "key": "context", "label": "함께 있는 다른 상황이 있나요?", "type": "text", "required": false, "step": 2, "placeholder": "예: 최근 등산을 다녀왔어요" },
+      { "key": "goal", "label": "무엇을 준비하고 싶으세요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "questions", "label": "의사에게 물어볼 질문 목록" },
+          { "value": "memo", "label": "증상을 정리한 메모" }
+        ] },
+      { "key": "tone", "label": "어떤 말투가 좋을까요?", "type": "choice", "required": false, "step": 3,
+        "options": [
+          { "value": "concise", "label": "간결하고 정확하게" },
+          { "value": "detailed", "label": "차분하고 자세하게" }
+        ] }
+    ],
+    "promptPattern": "너는 진료 전 증상 정리를 돕는 도우미다. 진단이나 처방을 하지 말고 정보 정리만 하라. 증상: {symptom}. 기간과 빈도: {duration}. 관련 상황: {context}. 사용자가 원하는 것: {goal}. 말투: {tone}. 의사에게 전달하기 쉽게 정리하고, 응급 증상으로 보이면 즉시 병원에 가라고 안내하라.",
+    "safetyType": "health",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "travel-itinerary",
+    "category": "travel-event",
+    "title": "여행 일정 짜기",
+    "searchKeywords": ["여행", "일정", "계획"],
+    "description": "여행 날짜와 장소를 입력하면 간단한 일정표를 만드는 질문을 만듭니다.",
+    "fields": [
+      { "key": "destination", "label": "어디로 여행 가세요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 제주도" },
+      { "key": "dates", "label": "언제, 며칠 동안 가나요?", "type": "text", "required": true, "step": 2, "placeholder": "예: 10월 5일부터 2박 3일" },
+      { "key": "companions", "label": "누구와 함께 가나요?", "type": "choice", "required": true, "step": 2,
+        "options": [
+          { "value": "alone", "label": "혼자" },
+          { "value": "family", "label": "가족과 함께" },
+          { "value": "friends", "label": "친구들과 함께" }
+        ] },
+      { "key": "interests", "label": "가고 싶은 곳이나 하고 싶은 활동이 있나요?", "type": "text", "required": false, "step": 3, "placeholder": "예: 바다 구경, 맛집 탐방" },
+      { "key": "format", "label": "일정표 형식은 어떻게 할까요?", "type": "choice", "required": false, "step": 4,
+        "options": [
+          { "value": "table", "label": "하루하루 표로" },
+          { "value": "list", "label": "시간대별 목록으로" }
+        ] }
+    ],
+    "promptPattern": "너는 친절한 여행 플래너다. 다음 정보를 참고해 여행 일정을 짜라. 여행지: {destination}. 날짜: {dates}. 동행: {companions}. 원하는 활동: {interests}. 일정표 형식: {format}. 이동 시간을 고려해 무리하지 않게 구성하라.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "image-photo-retouch",
+    "category": "image-generation",
+    "title": "사진 보정 프롬프트 만들기",
+    "searchKeywords": ["사진", "보정", "이미지", "프롬프트"],
+    "description": "가지고 있는 사진을 어떻게 바꾸고 싶은지 선택하면 이미지 생성 AI에 쓸 프롬프트를 만들어 드립니다.",
+    "supportsImage": true,
+    "fields": [
+      { "key": "purpose", "label": "무엇을 하고 싶으세요?", "type": "choice", "required": true, "step": 1,
+        "options": [
+          { "value": "retouch", "label": "사진 보정" },
+          { "value": "background", "label": "배경 변경" },
+          { "value": "composite", "label": "합성" },
+          { "value": "illustration", "label": "일러스트로 변환" },
+          { "value": "promo", "label": "홍보 이미지 만들기" }
+        ] },
+      { "key": "style", "label": "어떤 스타일을 원하세요?", "type": "text", "required": true, "step": 2, "placeholder": "예: 따뜻한 색감의 자연스러운 느낌" },
+      { "key": "ratio", "label": "어떤 비율이 필요하세요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "1:1", "label": "1:1 (정사각형)" },
+          { "value": "4:5", "label": "4:5 (세로)" },
+          { "value": "16:9", "label": "16:9 (가로)" },
+          { "value": "9:16", "label": "9:16 (세로로 긴 화면)" }
+        ] },
+      { "key": "keep", "label": "그대로 유지하고 싶은 부분이 있나요?", "type": "text", "required": false, "step": 4, "placeholder": "예: 얼굴과 표정은 그대로" },
+      { "key": "remove", "label": "바꾸거나 빼고 싶은 부분이 있나요?", "type": "text", "required": false, "step": 4, "placeholder": "예: 배경의 지저분한 물건들" }
+    ],
+    "promptPattern": "첨부한 사진을 참고하여 {purpose} 작업을 해줘. 스타일: {style}. 비율: {ratio}. 유지할 것: {keep}. 바꾸거나 제외할 것: {remove}.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "image-background-change",
+    "category": "image-generation",
+    "title": "사진 배경 바꾸기",
+    "searchKeywords": ["배경", "합성", "사진"],
+    "description": "사진 속 배경만 원하는 장소나 분위기로 바꾸는 프롬프트를 만듭니다.",
+    "supportsImage": true,
+    "fields": [
+      { "key": "newBackground", "label": "어떤 배경으로 바꾸고 싶으세요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 따뜻한 카페 안" },
+      { "key": "style", "label": "어떤 스타일을 원하세요?", "type": "text", "required": true, "step": 2, "placeholder": "예: 자연스러운 사진 느낌" },
+      { "key": "ratio", "label": "어떤 비율이 필요하세요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "1:1", "label": "1:1 (정사각형)" },
+          { "value": "4:5", "label": "4:5 (세로)" },
+          { "value": "16:9", "label": "16:9 (가로)" },
+          { "value": "9:16", "label": "9:16 (세로로 긴 화면)" }
+        ] },
+      { "key": "keep", "label": "인물이나 물건 중 그대로 유지하고 싶은 부분이 있나요?", "type": "text", "required": false, "step": 4, "placeholder": "예: 표정과 옷차림은 그대로" }
+    ],
+    "promptPattern": "첨부한 사진을 참고하여 배경을 {newBackground}(으)로 바꿔줘. 스타일: {style}. 비율: {ratio}. 유지할 것: {keep}. 인물이나 물건의 형태는 자연스럽게 유지해줘.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "image-composite",
+    "category": "image-generation",
+    "title": "사진 합성하기",
+    "searchKeywords": ["합성", "사진", "편집"],
+    "description": "두 가지 요소를 자연스럽게 합쳐서 새로운 이미지를 만드는 프롬프트를 만듭니다.",
+    "supportsImage": true,
+    "fields": [
+      { "key": "addElement", "label": "사진에 무엇을 추가로 합성하고 싶으세요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 옆에 강아지 한 마리" },
+      { "key": "style", "label": "어떤 스타일을 원하세요?", "type": "text", "required": true, "step": 2, "placeholder": "예: 자연스럽고 사실적인 느낌" },
+      { "key": "ratio", "label": "어떤 비율이 필요하세요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "1:1", "label": "1:1 (정사각형)" },
+          { "value": "4:5", "label": "4:5 (세로)" },
+          { "value": "16:9", "label": "16:9 (가로)" },
+          { "value": "9:16", "label": "9:16 (세로로 긴 화면)" }
+        ] },
+      { "key": "keep", "label": "그대로 유지하고 싶은 부분이 있나요?", "type": "text", "required": false, "step": 4, "placeholder": "예: 원래 사진의 인물은 그대로" }
+    ],
+    "promptPattern": "첨부한 사진을 참고하여 {addElement}을(를) 자연스럽게 합성해줘. 스타일: {style}. 비율: {ratio}. 유지할 것: {keep}. 빛과 그림자를 사진과 어울리게 맞춰줘.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "image-illustration",
+    "category": "image-generation",
+    "title": "사진을 일러스트로 바꾸기",
+    "searchKeywords": ["일러스트", "그림", "변환"],
+    "description": "사진을 그림이나 일러스트 느낌으로 바꾸는 프롬프트를 만듭니다.",
+    "supportsImage": true,
+    "fields": [
+      { "key": "illustrationStyle", "label": "어떤 그림 스타일로 바꾸고 싶으세요?", "type": "choice", "required": true, "step": 1,
+        "options": [
+          { "value": "watercolor", "label": "수채화 느낌" },
+          { "value": "cartoon", "label": "만화 느낌" },
+          { "value": "sketch", "label": "연필 스케치 느낌" },
+          { "value": "digital", "label": "디지털 일러스트 느낌" }
+        ] },
+      { "key": "mood", "label": "원하는 분위기가 있나요?", "type": "text", "required": false, "step": 2, "placeholder": "예: 따뜻하고 포근한 느낌" },
+      { "key": "ratio", "label": "어떤 비율이 필요하세요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "1:1", "label": "1:1 (정사각형)" },
+          { "value": "4:5", "label": "4:5 (세로)" },
+          { "value": "16:9", "label": "16:9 (가로)" },
+          { "value": "9:16", "label": "9:16 (세로로 긴 화면)" }
+        ] },
+      { "key": "keep", "label": "그대로 유지하고 싶은 부분이 있나요?", "type": "text", "required": false, "step": 4, "placeholder": "예: 인물의 특징" }
+    ],
+    "promptPattern": "첨부한 사진을 참고하여 {illustrationStyle}으로 바꿔줘. 분위기: {mood}. 비율: {ratio}. 유지할 것: {keep}. 인물의 특징은 알아볼 수 있게 유지해줘.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "image-promo-banner",
+    "category": "image-generation",
+    "title": "홍보 이미지 만들기",
+    "searchKeywords": ["홍보", "배너", "광고"],
+    "description": "가게나 행사를 알리는 홍보 이미지를 만드는 프롬프트를 만듭니다.",
+    "supportsImage": true,
+    "fields": [
+      { "key": "promoSubject", "label": "무엇을 홍보하고 싶으세요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 주말 반값 세일" },
+      { "key": "highlightText", "label": "이미지에 꼭 들어가야 할 문구가 있나요?", "type": "text", "required": false, "step": 2, "placeholder": "예: 이번 주 토요일까지" },
+      { "key": "style", "label": "어떤 느낌이 좋을까요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "vivid", "label": "밝고 화려하게" },
+          { "value": "clean", "label": "깔끔하고 단정하게" },
+          { "value": "warm", "label": "따뜻하고 정겹게" }
+        ] },
+      { "key": "ratio", "label": "어떤 비율이 필요하세요?", "type": "choice", "required": true, "step": 4,
+        "options": [
+          { "value": "1:1", "label": "1:1 (정사각형)" },
+          { "value": "4:5", "label": "4:5 (세로)" },
+          { "value": "16:9", "label": "16:9 (가로)" },
+          { "value": "9:16", "label": "9:16 (세로로 긴 화면)" }
+        ] }
+    ],
+    "promptPattern": "첨부한 사진을 참고하여 {promoSubject}을(를) 알리는 홍보 이미지를 만들어줘. 꼭 들어갈 문구: {highlightText}. 스타일: {style}. 비율: {ratio}.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "image-profile-photo",
+    "category": "image-generation",
+    "title": "프로필 사진 스타일 바꾸기",
+    "searchKeywords": ["프로필", "인물사진", "아바타"],
+    "description": "SNS나 메신저에 쓸 프로필 사진 스타일을 바꾸는 프롬프트를 만듭니다.",
+    "supportsImage": true,
+    "fields": [
+      { "key": "style", "label": "어떤 느낌으로 바꾸고 싶으세요?", "type": "choice", "required": true, "step": 1,
+        "options": [
+          { "value": "formal", "label": "단정한 증명사진 느낌" },
+          { "value": "soft", "label": "부드러운 인물사진 느낌" },
+          { "value": "avatar", "label": "그림풍 아바타 느낌" }
+        ] },
+      { "key": "background", "label": "배경은 어떻게 하고 싶으세요?", "type": "text", "required": false, "step": 2, "placeholder": "예: 깔끔한 흰색 배경" },
+      { "key": "ratio", "label": "어떤 비율이 필요하세요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "1:1", "label": "1:1 (정사각형)" },
+          { "value": "4:5", "label": "4:5 (세로)" },
+          { "value": "16:9", "label": "16:9 (가로)" },
+          { "value": "9:16", "label": "9:16 (세로로 긴 화면)" }
+        ] },
+      { "key": "keep", "label": "표정이나 특징 중 유지하고 싶은 부분이 있나요?", "type": "text", "required": false, "step": 4, "placeholder": "예: 웃는 표정은 그대로" }
+    ],
+    "promptPattern": "첨부한 사진을 참고하여 {style}으로 프로필 사진을 만들어줘. 배경: {background}. 비율: {ratio}. 유지할 것: {keep}. 얼굴은 본인임을 알아볼 수 있게 자연스럽게 유지해줘.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "image-product-photo",
+    "category": "image-generation",
+    "title": "상품 사진 꾸미기",
+    "searchKeywords": ["상품", "판매", "쇼핑몰"],
+    "description": "판매할 물건 사진을 더 돋보이게 꾸미는 프롬프트를 만듭니다.",
+    "supportsImage": true,
+    "fields": [
+      { "key": "product", "label": "무엇을 판매하시나요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 수제 딸기잼" },
+      { "key": "background", "label": "어떤 배경이나 분위기가 좋을까요?", "type": "text", "required": true, "step": 2, "placeholder": "예: 원목 테이블 위, 자연광" },
+      { "key": "style", "label": "어떤 느낌이 좋을까요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "simple", "label": "깔끔하고 심플하게" },
+          { "value": "warm", "label": "감성적이고 따뜻하게" },
+          { "value": "vivid", "label": "화려하고 눈에 띄게" }
+        ] },
+      { "key": "ratio", "label": "어떤 비율이 필요하세요?", "type": "choice", "required": true, "step": 4,
+        "options": [
+          { "value": "1:1", "label": "1:1 (정사각형)" },
+          { "value": "4:5", "label": "4:5 (세로)" },
+          { "value": "16:9", "label": "16:9 (가로)" },
+          { "value": "9:16", "label": "9:16 (세로로 긴 화면)" }
+        ] }
+    ],
+    "promptPattern": "첨부한 사진을 참고하여 {product} 상품 사진을 꾸며줘. 배경과 분위기: {background}. 스타일: {style}. 비율: {ratio}. 상품 본래의 색과 형태는 정확하게 유지해줘.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "image-greeting-card",
+    "category": "image-generation",
+    "title": "인사장·카드 이미지 만들기",
+    "searchKeywords": ["인사장", "카드", "명절", "생일"],
+    "description": "생일이나 명절에 보낼 인사장 이미지를 만드는 프롬프트를 만듭니다.",
+    "supportsImage": true,
+    "fields": [
+      { "key": "occasion", "label": "어떤 날을 위한 인사장인가요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 어버이날" },
+      { "key": "message", "label": "카드에 들어갈 문구가 있나요?", "type": "text", "required": false, "step": 2, "placeholder": "예: 항상 감사하고 사랑합니다" },
+      { "key": "style", "label": "어떤 느낌이 좋을까요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "warm", "label": "따뜻하고 정겹게" },
+          { "value": "bright", "label": "화사하고 밝게" },
+          { "value": "elegant", "label": "단정하고 고급스럽게" }
+        ] },
+      { "key": "ratio", "label": "어떤 비율이 필요하세요?", "type": "choice", "required": true, "step": 4,
+        "options": [
+          { "value": "1:1", "label": "1:1 (정사각형)" },
+          { "value": "4:5", "label": "4:5 (세로)" },
+          { "value": "16:9", "label": "16:9 (가로)" },
+          { "value": "9:16", "label": "9:16 (세로로 긴 화면)" }
+        ] }
+    ],
+    "promptPattern": "첨부한 사진을 참고하여 {occasion}을(를) 위한 인사장 이미지를 만들어줘. 문구: {message}. 스타일: {style}. 비율: {ratio}.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "image-poster",
+    "category": "image-generation",
+    "title": "행사 포스터 만들기",
+    "searchKeywords": ["포스터", "행사", "모임"],
+    "description": "모임이나 행사를 알리는 포스터 이미지를 만드는 프롬프트를 만듭니다.",
+    "supportsImage": true,
+    "fields": [
+      { "key": "eventName", "label": "어떤 행사인가요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 마을 가을 축제" },
+      { "key": "datePlace", "label": "언제, 어디에서 하나요?", "type": "text", "required": true, "step": 2, "placeholder": "예: 10월 12일, 마을회관 앞" },
+      { "key": "style", "label": "어떤 느낌이 좋을까요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "lively", "label": "활기차고 화려하게" },
+          { "value": "clean", "label": "깔끔하고 단정하게" },
+          { "value": "cute", "label": "따뜻하고 아기자기하게" }
+        ] },
+      { "key": "ratio", "label": "어떤 비율이 필요하세요?", "type": "choice", "required": true, "step": 4,
+        "options": [
+          { "value": "1:1", "label": "1:1 (정사각형)" },
+          { "value": "4:5", "label": "4:5 (세로)" },
+          { "value": "16:9", "label": "16:9 (가로)" },
+          { "value": "9:16", "label": "9:16 (세로로 긴 화면)" }
+        ] }
+    ],
+    "promptPattern": "첨부한 사진을 참고하여 {eventName} 포스터를 만들어줘. 일시와 장소: {datePlace}. 스타일: {style}. 비율: {ratio}. 글자가 잘 보이게 배치해줘.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "image-sns-thumbnail",
+    "category": "image-generation",
+    "title": "SNS 썸네일 만들기",
+    "searchKeywords": ["썸네일", "카드뉴스", "유튜브"],
+    "description": "블로그나 유튜브, 카드뉴스에 쓸 썸네일 이미지를 만드는 프롬프트를 만듭니다.",
+    "supportsImage": true,
+    "fields": [
+      { "key": "topic", "label": "무슨 내용의 썸네일인가요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 가을 등산 후기" },
+      { "key": "highlightText", "label": "썸네일에 넣고 싶은 짧은 문구가 있나요?", "type": "text", "required": false, "step": 2, "placeholder": "예: 초보자도 OK!" },
+      { "key": "style", "label": "어떤 느낌이 좋을까요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "bold", "label": "눈에 띄고 강렬하게" },
+          { "value": "clean", "label": "깔끔하고 세련되게" },
+          { "value": "cute", "label": "아기자기하고 귀엽게" }
+        ] },
+      { "key": "ratio", "label": "어떤 비율이 필요하세요?", "type": "choice", "required": true, "step": 4,
+        "options": [
+          { "value": "1:1", "label": "1:1 (정사각형)" },
+          { "value": "4:5", "label": "4:5 (세로)" },
+          { "value": "16:9", "label": "16:9 (가로)" },
+          { "value": "9:16", "label": "9:16 (세로로 긴 화면)" }
+        ] }
+    ],
+    "promptPattern": "첨부한 사진을 참고하여 {topic}에 대한 썸네일 이미지를 만들어줘. 문구: {highlightText}. 스타일: {style}. 비율: {ratio}.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "my-prompt-freeform",
+    "category": "my-prompt",
+    "title": "나만의 프롬프트 직접 만들기",
+    "searchKeywords": ["자유입력", "직접", "나만의"],
+    "description": "하고 싶은 말을 자유롭게 적으면 역할과 형식을 더해 프롬프트를 완성해 드립니다.",
+    "fields": [
+      { "key": "request", "label": "AI에게 무엇을 부탁하고 싶으세요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 은퇴 후 텃밭 가꾸기 계획을 세워줘" },
+      { "key": "detail", "label": "더 알려주고 싶은 내용이 있나요?", "type": "text", "required": false, "step": 2, "placeholder": "예: 아파트 베란다에서 키울 거예요" },
+      { "key": "tone", "label": "어떤 말투가 좋을까요?", "type": "choice", "required": false, "step": 3,
+        "options": [
+          { "value": "friendly", "label": "친근하게" },
+          { "value": "formal", "label": "정중하게" },
+          { "value": "expert", "label": "전문가처럼" }
+        ] },
+      { "key": "format", "label": "결과를 어떤 형식으로 받고 싶으세요?", "type": "choice", "required": false, "step": 4,
+        "options": [
+          { "value": "list", "label": "목록으로" },
+          { "value": "prose", "label": "줄글로" },
+          { "value": "table", "label": "표로" }
+        ] }
+    ],
+    "promptPattern": "다음 요청에 대해 답해줘. 요청: {request}. 추가 설명: {detail}. 말투: {tone}. 형식: {format}.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "writing-facebook-post",
+    "category": "writing-sns",
+    "title": "페이스북 글 쓰기",
+    "searchKeywords": ["페이스북", "글쓰기", "칼럼"],
+    "description": "일상이나 생각을 페이스북에 올릴 글로 정리하는 질문을 만듭니다.",
+    "fields": [
+      { "key": "topic", "label": "무엇에 대해 쓰고 싶으세요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 이번 주말 텃밭 이야기" },
+      { "key": "keyPoints", "label": "꼭 넣고 싶은 내용이 있나요?", "type": "text", "required": false, "step": 2, "placeholder": "예: 수확한 채소 사진과 함께" },
+      { "key": "audience", "label": "누가 읽으면 좋을까요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "friends", "label": "친구와 이웃" },
+          { "value": "club", "label": "동호회 회원" },
+          { "value": "general", "label": "일반 대중" }
+        ] },
+      { "key": "tone", "label": "어떤 말투로 쓸까요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "friendly", "label": "편안하고 친근하게" },
+          { "value": "formal", "label": "정중하게" },
+          { "value": "cheerful", "label": "유쾌하게" }
+        ] },
+      { "key": "length", "label": "길이는 어느 정도가 좋을까요?", "type": "choice", "required": false, "step": 4,
+        "options": [
+          { "value": "short", "label": "짧게 (200자 이내)" },
+          { "value": "medium", "label": "보통 (400자 내외)" },
+          { "value": "long", "label": "길게" }
+        ] }
+    ],
+    "promptPattern": "너는 친근한 페이스북 글 작성자다. 다음 정보를 참고해 페이스북에 올릴 글을 써라. 주제: {topic}. 꼭 넣을 내용: {keyPoints}. 읽는 사람: {audience}. 말투: {tone}. 길이: {length}. 자연스럽고 읽기 편한 문장으로 써라.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "writing-sns-caption",
+    "category": "writing-sns",
+    "title": "SNS 사진 캡션 쓰기",
+    "searchKeywords": ["캡션", "인스타그램", "사진"],
+    "description": "SNS에 올릴 사진에 어울리는 짧은 캡션을 만드는 질문을 만듭니다.",
+    "fields": [
+      { "key": "photoContent", "label": "어떤 사진에 붙일 캡션인가요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 가족과 함께한 저녁 식사 사진" },
+      { "key": "mood", "label": "전하고 싶은 느낌이 있나요?", "type": "text", "required": false, "step": 2, "placeholder": "예: 소소하지만 행복한 느낌" },
+      { "key": "tone", "label": "어떤 느낌으로 쓸까요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "witty", "label": "짧고 위트있게" },
+          { "value": "emotional", "label": "따뜻하고 감성적으로" },
+          { "value": "informative", "label": "정보 전달 위주로" }
+        ] },
+      { "key": "hashtag", "label": "해시태그도 함께 만들까요?", "type": "choice", "required": false, "step": 4,
+        "options": [
+          { "value": "yes", "label": "네, 함께 만들어줘" },
+          { "value": "no", "label": "아니요, 캡션만" }
+        ] }
+    ],
+    "promptPattern": "너는 SNS 캡션 작가다. 다음 사진 내용을 참고해 짧은 캡션을 써라. 사진 내용: {photoContent}. 전하고 싶은 느낌: {mood}. 말투: {tone}. 해시태그: {hashtag}.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "writing-shortform-script",
+    "category": "writing-sns",
+    "title": "짧은 영상 대본 만들기",
+    "searchKeywords": ["숏폼", "영상", "대본", "유튜브"],
+    "description": "짧은 영상에 쓸 대본을 만드는 질문을 만듭니다.",
+    "fields": [
+      { "key": "topic", "label": "어떤 내용의 짧은 영상인가요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 집에서 쉽게 만드는 반찬 소개" },
+      { "key": "duration", "label": "영상 길이는 어느 정도인가요?", "type": "choice", "required": true, "step": 2,
+        "options": [
+          { "value": "15s", "label": "15초 내외" },
+          { "value": "30s", "label": "30초 내외" },
+          { "value": "60s", "label": "1분 내외" }
+        ] },
+      { "key": "audience", "label": "누가 보면 좋을까요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "peers", "label": "또래 친구들" },
+          { "value": "children", "label": "자녀 세대" },
+          { "value": "general", "label": "일반 구독자" }
+        ] },
+      { "key": "tone", "label": "어떤 느낌으로 만들까요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "lively", "label": "발랄하고 재미있게" },
+          { "value": "calm", "label": "차분하고 정보 위주로" }
+        ] }
+    ],
+    "promptPattern": "너는 짧은 영상 대본 작가다. 다음 정보로 대본을 써라. 주제: {topic}. 길이: {duration}. 보는 사람: {audience}. 말투: {tone}. 시작 3초 안에 주목을 끌 수 있게 구성하고, 장면별로 나눠서 써라.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "writing-title-ideas",
+    "category": "writing-sns",
+    "title": "글 제목 아이디어 만들기",
+    "searchKeywords": ["제목", "아이디어", "카피"],
+    "description": "이미 쓴 글에 어울리는 제목 아이디어를 여러 개 받는 질문을 만듭니다.",
+    "fields": [
+      { "key": "content", "label": "어떤 내용의 글인가요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 텃밭에서 상추 키우는 방법" },
+      { "key": "keyword", "label": "제목에 꼭 들어가면 좋겠는 단어가 있나요?", "type": "text", "required": false, "step": 2, "placeholder": "예: 초보, 쉬운" },
+      { "key": "style", "label": "어떤 느낌의 제목이 좋을까요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "curious", "label": "호기심을 자극하게" },
+          { "value": "clear", "label": "정보가 명확하게" },
+          { "value": "warm", "label": "따뜻한 느낌으로" }
+        ] },
+      { "key": "count", "label": "몇 개나 받고 싶으세요?", "type": "choice", "required": false, "step": 4,
+        "options": [
+          { "value": "3", "label": "3개" },
+          { "value": "5", "label": "5개" },
+          { "value": "10", "label": "10개" }
+        ] }
+    ],
+    "promptPattern": "너는 제목을 잘 짓는 편집자다. 다음 글 내용에 어울리는 제목을 {count} 만들어줘. 글 내용: {content}. 꼭 들어갈 단어: {keyword}. 스타일: {style}.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "work-report-writing",
+    "category": "work-report",
+    "title": "업무 보고서 쓰기",
+    "searchKeywords": ["보고서", "업무", "현황"],
+    "description": "업무 현황이나 결과를 정리한 보고서를 만드는 질문을 만듭니다.",
+    "fields": [
+      { "key": "topic", "label": "무엇에 대한 보고서인가요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 3월 매출 현황" },
+      { "key": "keyData", "label": "꼭 들어가야 할 내용이나 수치가 있나요?", "type": "text", "required": true, "step": 2, "placeholder": "예: 전월 대비 매출 12% 증가" },
+      { "key": "audience", "label": "누가 이 보고서를 보나요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "manager", "label": "직속 상사" },
+          { "value": "executive", "label": "경영진" },
+          { "value": "department", "label": "관련 부서" }
+        ] },
+      { "key": "format", "label": "어떤 형식이 좋을까요?", "type": "choice", "required": false, "step": 4,
+        "options": [
+          { "value": "onepage", "label": "한 페이지 요약" },
+          { "value": "detailed", "label": "항목별 상세 보고" }
+        ] }
+    ],
+    "promptPattern": "너는 정확한 보고서 작성자다. 다음 정보로 업무 보고서를 써라. 주제: {topic}. 핵심 내용과 수치: {keyData}. 보고 대상: {audience}. 형식: {format}. 결론과 다음 계획을 명확히 구분해서 써라.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "work-proposal",
+    "category": "work-report",
+    "title": "제안서 초안 쓰기",
+    "searchKeywords": ["제안서", "기획", "건의"],
+    "description": "새로운 아이디어나 개선안을 제안서 초안으로 정리하는 질문을 만듭니다.",
+    "fields": [
+      { "key": "topic", "label": "무엇을 제안하고 싶으세요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 사무실 화분 배치 제안" },
+      { "key": "reason", "label": "왜 이 제안이 필요한가요?", "type": "text", "required": true, "step": 2, "placeholder": "예: 사무실 공기질 개선을 위해" },
+      { "key": "audience", "label": "누구에게 보여줄 제안서인가요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "manager", "label": "팀장" },
+          { "value": "executive", "label": "경영진" },
+          { "value": "coworkers", "label": "동료들" }
+        ] },
+      { "key": "tone", "label": "어떤 느낌으로 쓸까요?", "type": "choice", "required": false, "step": 4,
+        "options": [
+          { "value": "logical", "label": "정중하고 논리적으로" },
+          { "value": "persuasive", "label": "간결하고 설득력 있게" }
+        ] }
+    ],
+    "promptPattern": "너는 설득력 있는 제안서 작성자다. 다음 정보로 제안서 초안을 써라. 제안 내용: {topic}. 제안 이유: {reason}. 보는 대상: {audience}. 말투: {tone}. 기대 효과를 포함해서 써라.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "work-presentation-outline",
+    "category": "work-report",
+    "title": "발표 구성 짜기",
+    "searchKeywords": ["발표", "프레젠테이션", "구성"],
+    "description": "발표 순서와 시간 배분을 짜는 질문을 만듭니다.",
+    "fields": [
+      { "key": "topic", "label": "무엇에 대한 발표인가요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 신제품 소개" },
+      { "key": "duration", "label": "발표 시간은 어느 정도인가요?", "type": "choice", "required": true, "step": 2,
+        "options": [
+          { "value": "5min", "label": "5분 이내" },
+          { "value": "10min", "label": "10분 내외" },
+          { "value": "20min", "label": "20분 이상" }
+        ] },
+      { "key": "audience", "label": "누가 들으러 오나요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "coworkers", "label": "동료 직원" },
+          { "value": "clients", "label": "고객" },
+          { "value": "executive", "label": "경영진" }
+        ] },
+      { "key": "goal", "label": "발표를 통해 무엇을 전달하고 싶으세요?", "type": "text", "required": false, "step": 4, "placeholder": "예: 신제품의 장점을 이해시키기" }
+    ],
+    "promptPattern": "너는 발표 구성을 잘 짜는 컨설턴트다. 다음 정보로 발표 순서를 짜줘. 주제: {topic}. 발표 시간: {duration}. 듣는 사람: {audience}. 전달 목표: {goal}. 도입-본론-결론 순서로 시간 배분까지 알려줘.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "work-summary",
+    "category": "work-report",
+    "title": "자료 요약하기",
+    "searchKeywords": ["요약", "자료", "정리"],
+    "description": "긴 자료를 핵심만 간추려 요약하는 질문을 만듭니다.",
+    "fields": [
+      { "key": "content", "label": "무슨 자료를 요약하고 싶으세요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 10쪽짜리 시장 조사 보고서" },
+      { "key": "focus", "label": "특히 중요하게 다룰 부분이 있나요?", "type": "text", "required": false, "step": 2, "placeholder": "예: 경쟁사 비교 부분" },
+      { "key": "length", "label": "요약 길이는 어느 정도가 좋을까요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "3lines", "label": "3줄 요약" },
+          { "value": "half", "label": "절반 분량으로 요약" },
+          { "value": "keywords", "label": "핵심 키워드만" }
+        ] },
+      { "key": "audience", "label": "누가 볼 요약인가요?", "type": "choice", "required": false, "step": 4,
+        "options": [
+          { "value": "self", "label": "나만 볼 용도" },
+          { "value": "team", "label": "팀 공유용" }
+        ] }
+    ],
+    "promptPattern": "너는 핵심을 잘 짚어내는 요약 전문가다. 다음 자료를 요약해줘. 자료 내용: {content}. 중점 부분: {focus}. 요약 길이: {length}. 보는 대상: {audience}.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "relationship-thanks",
+    "category": "relationship",
+    "title": "감사 인사 전하기",
+    "searchKeywords": ["감사", "인사", "고마움"],
+    "description": "고마운 마음을 담은 감사 인사를 만드는 질문을 만듭니다.",
+    "fields": [
+      { "key": "reason", "label": "무엇에 대해 감사 인사를 전하고 싶으세요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 이사할 때 도와준 것" },
+      { "key": "recipient", "label": "누구에게 전하는 인사인가요?", "type": "choice", "required": true, "step": 2,
+        "options": [
+          { "value": "family", "label": "가족" },
+          { "value": "friend", "label": "친구" },
+          { "value": "coworker", "label": "동료" },
+          { "value": "neighbor", "label": "이웃" }
+        ] },
+      { "key": "tone", "label": "어떤 느낌으로 전할까요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "warm", "label": "따뜻하고 진심을 담아" },
+          { "value": "cheerful", "label": "밝고 경쾌하게" },
+          { "value": "formal", "label": "정중하게" }
+        ] },
+      { "key": "length", "label": "길이는 어느 정도가 좋을까요?", "type": "choice", "required": false, "step": 4,
+        "options": [
+          { "value": "short", "label": "짧은 메시지로" },
+          { "value": "long", "label": "조금 길게" }
+        ] }
+    ],
+    "promptPattern": "너는 진심을 잘 전달하는 글쓰기 도우미다. 다음 정보로 감사 인사를 써라. 감사한 이유: {reason}. 받는 사람: {recipient}. 말투: {tone}. 길이: {length}.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "relationship-congrats",
+    "category": "relationship",
+    "title": "축하 인사 전하기",
+    "searchKeywords": ["축하", "인사", "경사"],
+    "description": "기쁜 소식에 대한 축하 인사를 만드는 질문을 만듭니다.",
+    "fields": [
+      { "key": "occasion", "label": "무슨 일을 축하하고 싶으세요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 손주의 대학 합격" },
+      { "key": "recipient", "label": "누구에게 전하는 축하인가요?", "type": "choice", "required": true, "step": 2,
+        "options": [
+          { "value": "family", "label": "가족" },
+          { "value": "friend", "label": "친구" },
+          { "value": "coworker", "label": "동료" },
+          { "value": "acquaintance", "label": "지인" }
+        ] },
+      { "key": "tone", "label": "어떤 느낌으로 전할까요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "lively", "label": "기쁘고 활기차게" },
+          { "value": "warm", "label": "따뜻하고 정중하게" }
+        ] },
+      { "key": "length", "label": "길이는 어느 정도가 좋을까요?", "type": "choice", "required": false, "step": 4,
+        "options": [
+          { "value": "short", "label": "짧게" },
+          { "value": "long", "label": "조금 길게" }
+        ] }
+    ],
+    "promptPattern": "너는 축하 인사를 잘 전하는 글쓰기 도우미다. 다음 정보로 축하 메시지를 써라. 축하할 일: {occasion}. 받는 사람: {recipient}. 말투: {tone}. 길이: {length}.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "relationship-comfort",
+    "category": "relationship",
+    "title": "위로 인사 전하기",
+    "searchKeywords": ["위로", "인사", "안부"],
+    "description": "힘든 상황에 있는 사람에게 조심스러운 위로를 전하는 질문을 만듭니다.",
+    "fields": [
+      { "key": "situation", "label": "어떤 상황을 위로하고 싶으세요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 부모님을 여읜 친구" },
+      { "key": "recipient", "label": "누구에게 전하는 위로인가요?", "type": "choice", "required": true, "step": 2,
+        "options": [
+          { "value": "family", "label": "가족" },
+          { "value": "friend", "label": "친구" },
+          { "value": "coworker", "label": "동료" },
+          { "value": "acquaintance", "label": "지인" }
+        ] },
+      { "key": "tone", "label": "어떤 느낌으로 전할까요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "gentle", "label": "조심스럽고 따뜻하게" },
+          { "value": "calm", "label": "담담하고 정중하게" }
+        ] },
+      { "key": "length", "label": "길이는 어느 정도가 좋을까요?", "type": "choice", "required": false, "step": 4,
+        "options": [
+          { "value": "short", "label": "짧게" },
+          { "value": "long", "label": "조금 길게" }
+        ] }
+    ],
+    "promptPattern": "너는 조심스럽고 따뜻하게 위로를 전하는 글쓰기 도우미다. 다음 정보로 위로 메시지를 써라. 상황: {situation}. 받는 사람: {recipient}. 말투: {tone}. 길이: {length}. 과장되지 않게, 상대방 마음을 배려해서 써라.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "relationship-decline",
+    "category": "relationship",
+    "title": "정중하게 거절하기",
+    "searchKeywords": ["거절", "정중히", "부탁"],
+    "description": "관계를 해치지 않으면서 부탁이나 제안을 정중히 거절하는 질문을 만듭니다.",
+    "fields": [
+      { "key": "request", "label": "어떤 부탁이나 제안을 거절하고 싶으세요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 모임 총무 제안" },
+      { "key": "reason", "label": "거절하는 이유를 어느 정도 밝히고 싶으세요?", "type": "text", "required": false, "step": 2, "placeholder": "예: 개인 사정으로 시간을 내기 어려워서" },
+      { "key": "recipient", "label": "누구에게 전하는 거절인가요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "close", "label": "가까운 지인" },
+          { "value": "coworker", "label": "직장 동료" },
+          { "value": "formal", "label": "공식적인 관계" }
+        ] },
+      { "key": "tone", "label": "어떤 느낌으로 전할까요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "polite", "label": "정중하고 예의 있게" },
+          { "value": "apologetic", "label": "미안한 마음을 담아" }
+        ] }
+    ],
+    "promptPattern": "너는 관계를 해치지 않으면서 정중하게 거절하는 글쓰기 도우미다. 다음 정보로 거절 메시지를 써라. 거절할 내용: {request}. 이유: {reason}. 받는 사람: {recipient}. 말투: {tone}. 상대방의 기분이 상하지 않게 배려해서 써라.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "relationship-encouragement",
+    "category": "relationship",
+    "title": "격려 메시지 전하기",
+    "searchKeywords": ["격려", "응원", "메시지"],
+    "description": "힘이 되는 응원과 격려의 메시지를 만드는 질문을 만듭니다.",
+    "fields": [
+      { "key": "situation", "label": "어떤 상황에 있는 사람을 격려하고 싶으세요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 시험을 앞둔 손주" },
+      { "key": "recipient", "label": "누구에게 전하는 격려인가요?", "type": "choice", "required": true, "step": 2,
+        "options": [
+          { "value": "family", "label": "가족" },
+          { "value": "friend", "label": "친구" },
+          { "value": "coworker", "label": "동료" },
+          { "value": "junior", "label": "후배" }
+        ] },
+      { "key": "tone", "label": "어떤 느낌으로 전할까요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "warm", "label": "따뜻하고 다정하게" },
+          { "value": "strong", "label": "씩씩하고 힘있게" }
+        ] },
+      { "key": "length", "label": "길이는 어느 정도가 좋을까요?", "type": "choice", "required": false, "step": 4,
+        "options": [
+          { "value": "short", "label": "짧게" },
+          { "value": "long", "label": "조금 길게" }
+        ] }
+    ],
+    "promptPattern": "너는 힘이 되는 격려 메시지를 잘 쓰는 도우미다. 다음 정보로 격려 메시지를 써라. 상황: {situation}. 받는 사람: {recipient}. 말투: {tone}. 길이: {length}.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "learning-study-plan",
+    "category": "learning-ai-terms",
+    "title": "공부 계획 짜기",
+    "searchKeywords": ["공부", "계획", "학습"],
+    "description": "새로운 것을 배우기 위한 공부 계획을 짜는 질문을 만듭니다.",
+    "fields": [
+      { "key": "goal", "label": "무엇을 배우고 싶으세요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 스마트폰 사진 편집 앱 사용법" },
+      { "key": "period", "label": "기간은 어느 정도로 잡을까요?", "type": "choice", "required": true, "step": 2,
+        "options": [
+          { "value": "week", "label": "일주일" },
+          { "value": "month", "label": "한 달" },
+          { "value": "3months", "label": "세 달" }
+        ] },
+      { "key": "timePerDay", "label": "하루에 낼 수 있는 시간이 있나요?", "type": "text", "required": false, "step": 3, "placeholder": "예: 하루 30분 정도" },
+      { "key": "level", "label": "지금 수준은 어느 정도인가요?", "type": "choice", "required": false, "step": 4,
+        "options": [
+          { "value": "beginner", "label": "처음 배우는 수준" },
+          { "value": "some", "label": "조금 알고 있는 수준" }
+        ] }
+    ],
+    "promptPattern": "너는 학습 계획을 잘 짜는 코치다. 다음 정보로 공부 계획을 짜줘. 배우고 싶은 것: {goal}. 기간: {period}. 하루 학습 시간: {timePerDay}. 현재 수준: {level}. 주차별로 나눠서 계획을 짜줘.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "learning-flashcards",
+    "category": "learning-ai-terms",
+    "title": "플래시카드 만들기",
+    "searchKeywords": ["플래시카드", "암기", "카드"],
+    "description": "외우고 싶은 내용을 플래시카드 형식으로 만드는 질문을 만듭니다.",
+    "fields": [
+      { "key": "topic", "label": "무엇을 외우고 싶으세요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 자주 쓰는 AI 용어 10개" },
+      { "key": "count", "label": "몇 개나 만들까요?", "type": "choice", "required": true, "step": 2,
+        "options": [
+          { "value": "5", "label": "5개" },
+          { "value": "10", "label": "10개" },
+          { "value": "15", "label": "15개" }
+        ] },
+      { "key": "format", "label": "어떤 형식이 좋을까요?", "type": "choice", "required": false, "step": 3,
+        "options": [
+          { "value": "qa", "label": "질문과 답 형식" },
+          { "value": "worddef", "label": "단어와 뜻 형식" }
+        ] },
+      { "key": "level", "label": "난이도는 어느 정도가 좋을까요?", "type": "choice", "required": false, "step": 4,
+        "options": [
+          { "value": "easy", "label": "쉬운 수준" },
+          { "value": "hard", "label": "조금 어려운 수준" }
+        ] }
+    ],
+    "promptPattern": "너는 암기 카드를 잘 만드는 선생님이다. 다음 주제로 플래시카드를 만들어줘. 주제: {topic}. 개수: {count}. 형식: {format}. 난이도: {level}.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "learning-quiz",
+    "category": "learning-ai-terms",
+    "title": "퀴즈 만들기",
+    "searchKeywords": ["퀴즈", "문제", "복습"],
+    "description": "배운 내용을 복습할 수 있는 퀴즈를 만드는 질문을 만듭니다.",
+    "fields": [
+      { "key": "topic", "label": "무엇에 대한 퀴즈를 만들고 싶으세요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 지난주 배운 AI 용어" },
+      { "key": "count", "label": "문제 수는 몇 개로 할까요?", "type": "choice", "required": true, "step": 2,
+        "options": [
+          { "value": "5", "label": "5문제" },
+          { "value": "10", "label": "10문제" }
+        ] },
+      { "key": "type", "label": "어떤 유형이 좋을까요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "multiple", "label": "객관식" },
+          { "value": "ox", "label": "OX 퀴즈" },
+          { "value": "short", "label": "단답형" }
+        ] },
+      { "key": "level", "label": "난이도는 어느 정도가 좋을까요?", "type": "choice", "required": false, "step": 4,
+        "options": [
+          { "value": "easy", "label": "쉬운 수준" },
+          { "value": "hard", "label": "조금 어려운 수준" }
+        ] }
+    ],
+    "promptPattern": "너는 재미있는 퀴즈를 잘 만드는 선생님이다. 다음 주제로 퀴즈를 만들어줘. 주제: {topic}. 문제 수: {count}. 유형: {type}. 난이도: {level}. 마지막에 정답도 함께 알려줘.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "health-doctor-questions",
+    "category": "health-life-log",
+    "title": "병원에서 물어볼 질문 만들기",
+    "searchKeywords": ["병원", "진료", "질문"],
+    "description": "진료 전 의사에게 물어볼 질문을 정리하는 질문을 만듭니다. 진단이나 처방을 대신하지 않습니다.",
+    "fields": [
+      { "key": "condition", "label": "어떤 것 때문에 병원에 가시나요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 최근 시작한 혈압약" },
+      { "key": "concern", "label": "궁금하거나 걱정되는 점이 있나요?", "type": "text", "required": true, "step": 2, "placeholder": "예: 약을 먹으면 어지러워요" },
+      { "key": "goal", "label": "무엇을 준비하고 싶으세요?", "type": "choice", "required": false, "step": 3,
+        "options": [
+          { "value": "questions", "label": "궁금한 점 물어보기" },
+          { "value": "advice", "label": "생활 습관 조언 구하기" }
+        ] }
+    ],
+    "promptPattern": "너는 진료 전 궁금한 점을 정리하는 도우미다. 진단이나 처방은 하지 말고 질문 목록만 만들어라. 상황: {condition}. 걱정되는 점: {concern}. 목적: {goal}. 의사에게 물어볼 질문을 목록으로 정리해줘.",
+    "safetyType": "health",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "health-exercise-plan",
+    "category": "health-life-log",
+    "title": "운동 계획 세우기",
+    "searchKeywords": ["운동", "계획", "건강"],
+    "description": "무리하지 않는 범위에서 운동 계획을 세우는 질문을 만듭니다. 의학적 진단을 대신하지 않습니다.",
+    "fields": [
+      { "key": "goal", "label": "운동을 통해 이루고 싶은 목표가 있나요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 무릎에 무리 없이 체력 기르기" },
+      { "key": "condition", "label": "건강 상태나 주의할 점이 있나요?", "type": "text", "required": false, "step": 2, "placeholder": "예: 무릎이 약한 편이에요" },
+      { "key": "frequency", "label": "얼마나 자주 운동하고 싶으세요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "2to3", "label": "주 2~3회" },
+          { "value": "4to5", "label": "주 4~5회" },
+          { "value": "daily", "label": "매일 조금씩" }
+        ] },
+      { "key": "place", "label": "어디에서 운동하고 싶으세요?", "type": "choice", "required": false, "step": 4,
+        "options": [
+          { "value": "home", "label": "집에서" },
+          { "value": "park", "label": "동네 공원에서" },
+          { "value": "gym", "label": "헬스장에서" }
+        ] }
+    ],
+    "promptPattern": "너는 안전한 운동 계획을 세워주는 도우미다. 의학적 진단은 하지 말고 일반적인 운동 계획만 제안해라. 목표: {goal}. 주의할 점: {condition}. 운동 빈도: {frequency}. 장소: {place}. 무리하지 않는 선에서 계획을 짜줘.",
+    "safetyType": "health",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "health-daily-log",
+    "category": "health-life-log",
+    "title": "하루 건강 기록 정리하기",
+    "searchKeywords": ["하루기록", "건강일기", "생활기록"],
+    "description": "오늘 하루의 활동과 몸 상태를 간단히 정리하는 질문을 만듭니다.",
+    "fields": [
+      { "key": "activities", "label": "오늘 어떤 활동을 하셨나요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 아침 산책 30분, 점심 식사 후 낮잠" },
+      { "key": "condition", "label": "오늘 몸 상태는 어땠나요?", "type": "text", "required": false, "step": 2, "placeholder": "예: 컨디션 좋음, 약간 피곤함" },
+      { "key": "format", "label": "어떤 형식으로 정리할까요?", "type": "choice", "required": false, "step": 3,
+        "options": [
+          { "value": "list", "label": "간단한 목록으로" },
+          { "value": "diary", "label": "짧은 일기 형식으로" }
+        ] }
+    ],
+    "promptPattern": "너는 하루 건강 기록을 정리해주는 도우미다. 다음 정보를 정리해줘. 오늘 활동: {activities}. 몸 상태: {condition}. 형식: {format}.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "travel-packing-list",
+    "category": "travel-event",
+    "title": "여행 준비물 목록 만들기",
+    "searchKeywords": ["준비물", "여행", "짐"],
+    "description": "여행지와 일정에 맞는 준비물 목록을 만드는 질문을 만듭니다.",
+    "fields": [
+      { "key": "destination", "label": "어디로, 며칠 여행 가세요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 부산으로 2박 3일" },
+      { "key": "season", "label": "어느 계절에 가나요?", "type": "choice", "required": true, "step": 2,
+        "options": [
+          { "value": "spring", "label": "봄" },
+          { "value": "summer", "label": "여름" },
+          { "value": "fall", "label": "가을" },
+          { "value": "winter", "label": "겨울" }
+        ] },
+      { "key": "companions", "label": "누구와 함께 가나요?", "type": "choice", "required": false, "step": 3,
+        "options": [
+          { "value": "alone", "label": "혼자" },
+          { "value": "family", "label": "가족과 함께" },
+          { "value": "friends", "label": "친구들과 함께" }
+        ] },
+      { "key": "specialNeeds", "label": "특별히 챙겨야 할 것이 있나요?", "type": "text", "required": false, "step": 4, "placeholder": "예: 상비약, 우산" }
+    ],
+    "promptPattern": "너는 꼼꼼한 여행 준비를 도와주는 도우미다. 다음 정보로 준비물 목록을 만들어줘. 여행지와 기간: {destination}. 계절: {season}. 동행: {companions}. 추가로 챙길 것: {specialNeeds}. 카테고리별로 나눠서 목록을 만들어줘.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "travel-event-greeting",
+    "category": "travel-event",
+    "title": "행사 인사말 만들기",
+    "searchKeywords": ["인사말", "축사", "행사"],
+    "description": "행사에서 할 인사말이나 축사를 만드는 질문을 만듭니다.",
+    "fields": [
+      { "key": "eventName", "label": "어떤 행사에서 하는 인사말인가요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 마을 경로잔치" },
+      { "key": "role", "label": "어떤 역할로 인사말을 하시나요?", "type": "choice", "required": true, "step": 2,
+        "options": [
+          { "value": "host", "label": "행사 주최자" },
+          { "value": "speaker", "label": "축사를 부탁받은 사람" },
+          { "value": "representative", "label": "참석자 대표" }
+        ] },
+      { "key": "tone", "label": "어떤 느낌으로 말할까요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "warm", "label": "따뜻하고 정중하게" },
+          { "value": "cheerful", "label": "밝고 유쾌하게" }
+        ] },
+      { "key": "length", "label": "길이는 어느 정도가 좋을까요?", "type": "choice", "required": false, "step": 4,
+        "options": [
+          { "value": "short", "label": "짧게 (1분 이내)" },
+          { "value": "long", "label": "조금 길게" }
+        ] }
+    ],
+    "promptPattern": "너는 행사 인사말을 잘 쓰는 도우미다. 다음 정보로 인사말을 써줘. 행사: {eventName}. 역할: {role}. 말투: {tone}. 길이: {length}.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "travel-review",
+    "category": "travel-event",
+    "title": "여행 후기 쓰기",
+    "searchKeywords": ["여행후기", "후기", "기록"],
+    "description": "다녀온 여행을 후기 글로 정리하는 질문을 만듭니다.",
+    "fields": [
+      { "key": "destination", "label": "어디로 다녀온 여행인가요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 강원도 속초" },
+      { "key": "highlights", "label": "가장 기억에 남는 일이 있나요?", "type": "text", "required": true, "step": 2, "placeholder": "예: 바닷가에서 본 일출" },
+      { "key": "tone", "label": "어떤 느낌으로 쓸까요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "emotional", "label": "감성적으로" },
+          { "value": "practical", "label": "정보 위주로 실용적으로" }
+        ] },
+      { "key": "length", "label": "길이는 어느 정도가 좋을까요?", "type": "choice", "required": false, "step": 4,
+        "options": [
+          { "value": "short", "label": "짧게" },
+          { "value": "long", "label": "조금 길게" }
+        ] }
+    ],
+    "promptPattern": "너는 여행 후기를 잘 쓰는 작가다. 다음 정보로 여행 후기를 써줘. 여행지: {destination}. 기억에 남는 일: {highlights}. 말투: {tone}. 길이: {length}.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
+    "id": "my-prompt-idea-organizer",
+    "category": "my-prompt",
+    "title": "머릿속 생각 정리해서 질문 만들기",
+    "searchKeywords": ["생각정리", "질문진단", "정리"],
+    "description": "정리되지 않은 생각을 적으면 AI에게 물어볼 명확한 질문으로 바꿔 드립니다.",
+    "fields": [
+      { "key": "rawThoughts", "label": "머릿속에 있는 생각을 편하게 적어보세요", "type": "text", "required": true, "step": 1, "placeholder": "예: 다음 달에 이사하는데 정리를 어떻게 해야 할지 모르겠어요" },
+      { "key": "goal", "label": "이 생각으로 무엇을 얻고 싶으세요?", "type": "text", "required": false, "step": 2, "placeholder": "예: 이사 체크리스트를 받고 싶어요" },
+      { "key": "format", "label": "어떤 형식으로 받고 싶으세요?", "type": "choice", "required": false, "step": 3,
+        "options": [
+          { "value": "list", "label": "목록으로" },
+          { "value": "steps", "label": "순서대로 설명" }
+        ] }
+    ],
+    "promptPattern": "다음은 정리되지 않은 생각이다. 이 내용을 바탕으로 AI에게 물어볼 명확한 질문을 만들어줘. 생각: {rawThoughts}. 원하는 것: {goal}. 형식: {format}.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  }
+]
