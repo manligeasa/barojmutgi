@@ -11,6 +11,7 @@ export function fieldsForStep(template: Template, step: WizardStep): Field[] {
 const TEXT_FIELD_DEFAULTS: Record<string, string> = {
   tone: '상황에 맞는 자연스럽고 정중한 말투로',
   length: '적절한 분량으로',
+  subject: '감정에 어울리는 인물이나 소품을 자연스럽게 골라서',
 }
 
 export function applyAutoFill(field: Field): string {

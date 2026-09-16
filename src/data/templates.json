@@ -450,6 +450,34 @@
     "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
   },
   {
+    "id": "image-calligraphy-illustration",
+    "category": "image-generation",
+    "title": "캘리그래피 & 감성 일러스트 만들기",
+    "searchKeywords": ["캘리그래피", "일러스트", "손글씨", "글귀"],
+    "description": "글귀나 키워드를 담아 감성적인 캘리그래피와 수채화 일러스트를 만드는 프롬프트를 만듭니다.",
+    "fields": [
+      { "key": "phrase", "label": "어떤 글귀나 키워드를 담고 싶으세요?", "type": "text", "required": true, "step": 1, "placeholder": "예: 괜찮아, 다 잘될 거야" },
+      { "key": "emotion", "label": "이 글에 담긴 감정은 무엇인가요?", "type": "choice", "required": true, "step": 1,
+        "options": [
+          { "value": "comfort", "label": "위로" },
+          { "value": "peace", "label": "평온" },
+          { "value": "passion", "label": "열정" },
+          { "value": "longing", "label": "그리움" },
+          { "value": "gratitude", "label": "감사" },
+          { "value": "hope", "label": "희망" }
+        ] },
+      { "key": "subject", "label": "떠오르는 장면이나 소품이 있나요?", "type": "text", "required": false, "step": 2, "placeholder": "예: 창가에 앉아 차를 마시는 모습" },
+      { "key": "calligraphyStyle", "label": "손글씨는 어떤 느낌이 좋을까요?", "type": "choice", "required": true, "step": 3,
+        "options": [
+          { "value": "brush", "label": "정성스러운 붓글씨" },
+          { "value": "pen", "label": "부드러운 펜글씨" }
+        ] }
+    ],
+    "promptPattern": "너는 텍스트의 감성을 시각적으로 번역하는 수석 캘리그래피 디자이너이자 수묵담채화 일러스트레이터다. 다음 글귀를 4:5 비율의 감성적인 캘리그래피 아트워크로 만들어줘. 글귀: {phrase}. 담긴 감정: {emotion}. 어울리는 장면이나 소품: {subject}. 화풍: 미니멀하고 따뜻한 수채화와 펜 드로잉 스타일로, 복잡한 배경 없이 인물이나 작은 소품으로 감정을 은유적으로 표현할 것. 여백: 화면의 40% 이상을 흰색이나 옅은 미색 여백으로 남겨 편안한 느낌을 줄 것. 구도: 글귀는 좌측 상단에서 중앙에 걸쳐 배치하고 그림은 우측 하단에 배치해 글에서 그림으로 시선이 자연스럽게 흐르게 할 것. 손글씨 톤: {calligraphyStyle}으로, 정형화된 폰트가 아닌 감정이 담긴 손글씨 느낌으로 표현할 것. 60대 이상 시니어 세대가 편안하게 공감할 수 있는 따뜻한 정서를 담을 것. 마지막으로 이미지 우측 하단 여백에 작가 서명 'Haedam'을 작게 낙관처럼 배치해줘.",
+    "safetyType": "general",
+    "revisionCommands": ["shorter", "more_detailed", "warmer", "more_professional", "simpler"]
+  },
+  {
     "id": "my-prompt-freeform",
     "category": "my-prompt",
     "title": "나만의 프롬프트 직접 만들기",

@@ -99,6 +99,9 @@ describe('applyAutoFill', () => {
   it('알려진 text 필드 key는 사전 정의된 문구를 반환한다', () => {
     const toneTextField = { key: 'tone', label: '', type: 'text' as const, required: false, step: 1 as const }
     expect(applyAutoFill(toneTextField)).toBe('상황에 맞는 자연스럽고 정중한 말투로')
+
+    const subjectTextField = { key: 'subject', label: '', type: 'text' as const, required: false, step: 2 as const }
+    expect(applyAutoFill(subjectTextField)).toBe('감정에 어울리는 인물이나 소품을 자연스럽게 골라서')
   })
 
   it('알려지지 않은 text 필드는 범용 문구를 반환한다', () => {
